@@ -1,0 +1,19 @@
+<button routerLink="/">Back to Front Page</button>
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="numTokens">
+      How many tokens would you like to buy?
+    </label>
+    <input id="numTokens" type="number" formControlName = "tokens">
+  </div>
+
+  <div>
+    <label for="paymentMethod">
+      What is your preferred payment method?
+    </label>
+    <input id="paymentMethod" type="text" formControlName = "paymentMethod">
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+</form>
+<div *ngIf="message">{{message}}</div>

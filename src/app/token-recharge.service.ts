@@ -9,11 +9,12 @@ export class TokenRechargeService {
   pricePerToken = .25;
   constructor(private ledgerService: LedgerService) { }
 
-  buyTokens(numTokens: number): void {
+  buyTokens(numTokens: number, paymentMethod: string): void {
     var price = numTokens * this.pricePerToken;
     this.ledgerService.addTransaction({
       date: new Date(),
-      description: `Payed ${price} for`
-    })
+      description: `Payed \$${price} for ${numTokens} tokens, using ${paymentMethod}.`,
+      deltaTokens: numTokens
+    });
   }
 }

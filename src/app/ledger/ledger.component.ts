@@ -16,13 +16,6 @@ export class LedgerComponent implements OnInit {
     this.getTransactions();
   }
 
-  onClick(): void {
-    this.ledgerService.addTransaction(
-      {date: new Date(),
-        description: "Test",
-        deltaTokens: 5});
-  }
-
   getTransactions(): void {
     this.ledgerService.getAllTransactions().subscribe(
       transactions => this.transactions = transactions);
