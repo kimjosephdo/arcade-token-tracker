@@ -1,0 +1,15 @@
+<p>ledger works!</p>
+<button routerLink="/">Back to Front Page</button>
+<button (click)="onClick()">Example Transaction</button>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Token Delta</th>
+  </tr>
+  <tr *ngFor="let transaction of transactions">
+    <th>{{transaction.date}}</th>
+    <th>{{transaction.description}}</th>
+    <th>{{transaction.deltaTokens}}</th>
+  </tr>
+</table>
