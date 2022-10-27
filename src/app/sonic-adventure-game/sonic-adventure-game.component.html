@@ -1,0 +1,9 @@
+<button routerLink="/game-browser">Back to Game Browser</button>
+<button routerLink="/">Back to Front Page</button>
+<h3>Sonic Adventure</h3>
+<div *ngIf="tokenInserted else elseBlock">Playing game!</div>
+<ng-template #elseBlock>Game inactive</ng-template>
+<div>
+  <button type="button" (click)="playGame()">Play {{name}} for {{tokenCost}} tokens!</button>
+</div>
+<div *ngIf="message">{{message}}</div>

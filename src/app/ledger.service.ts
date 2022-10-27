@@ -14,6 +14,10 @@ export class LedgerService {
 
   addTransaction(transaction: Transaction): void {
     this.transactions.push(transaction);
+    this.updateBalance();
+  }
+
+  updateBalance(): void {
     this.balanceSubject.next(this.calculateBalance());
   }
 

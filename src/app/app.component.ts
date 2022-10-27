@@ -12,14 +12,6 @@ export class AppComponent {
   balance?: Balance;
 
   constructor (private ledgerService: LedgerService) {
-
-  }
-
-  ngOnInit(): void {
-    this.getBalance();
-  }
-
-  getBalance(): void {
     this.ledgerService.getBalance().subscribe(
       balance => this.balance = balance);
   }
